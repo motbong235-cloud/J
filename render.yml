@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: kairozen-earn-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python referral_bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ADMIN_ID
+        sync: false
+      - key: CHANNEL_ID
+        sync: false
+      - key: CHANNEL_LINK
+        sync: false
+      - key: DATA_DIR
+        value: /var/data
+    disk:
+      name: bot-data
+      mountPath: /var/data
+      sizeGB: 1
