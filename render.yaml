@@ -2,7 +2,7 @@ services:
   - type: web
     name: kairozen-earn-bot
     runtime: python
-    plan: free
+    plan: starter
     buildCommand: pip install -r requirements.txt
     startCommand: python referral_bot.py
     envVars:
